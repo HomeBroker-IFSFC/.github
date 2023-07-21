@@ -11,14 +11,14 @@
 ### BIG PICTURE
 
 ```mermaid
-flowchar LR;
-    User--> HomeBroker;
-    HomeBroker --> NestJs;
-    NestJs --> Kafka;
-    Kafka ---> NestJs;
-    NestJs ---> SistemaBolsa;
-    SistemaBolsa ---> Kafka;
-    Kafka ---> SistemaBolsa;
+graph LR;
+    User-->HomeBroker;
+    HomeBroker -->NestJs;
+    NestJs-->Kafka;
+    Kafka--->NestJs;
+    NestJs--->SistemaBolsa;
+    SistemaBolsa--->Kafka;
+    Kafka--->SistemaBolsa;
 ```
 
 
