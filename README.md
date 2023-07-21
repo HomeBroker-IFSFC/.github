@@ -20,3 +20,12 @@ flowchar LR
     SistemaBolsa[Golang] ---> Kafka[Message Broker];
     Kafka[Message Broker] ---> SistemaBolsa[Golang];
 ```
+
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
