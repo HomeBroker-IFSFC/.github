@@ -12,20 +12,11 @@
 
 ```mermaid
 graph LR;
-    User-->HomeBroker;
-    HomeBroker -->NestJs;
-    NestJs-->Kafka;
-    Kafka--->NestJs;
-    NestJs--->SistemaBolsa;
-    SistemaBolsa--->Kafka;
-    Kafka--->SistemaBolsa;
-```
-
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    User[Frontend] --> HomeBroker[Frontend];
+    HomeBroker[Frontend] <--[rest]--> NestJs[Backend];
+    NestJs[Backend] --> Kafka[Message Broker];
+    Kafka[Message Broker] ---> NestJs[Backend];
+    NestJs[Backend] ---> SistemaBolsa[Golang];
+    SistemaBolsa[Golang] ---> Kafka[Message Broker];
+    Kafka[Message Broker] ---> SistemaBolsa[Golang];
 ```
