@@ -13,7 +13,7 @@
 ```mermaid
 graph LR;
     User[Frontend] --> HomeBroker[Frontend];
-    HomeBroker[Frontend] --[rest]--> NestJs[Backend];
+    HomeBroker[Frontend] -->|Rest| NestJs[Backend];
     NestJs[Backend] --> Kafka[Message Broker];
     Kafka[Message Broker] ---> NestJs[Backend];
     NestJs[Backend] ---> SistemaBolsa[Golang];
