@@ -13,11 +13,22 @@
 
 graph LR;
     User(User) <--> HomeBroker[Home Broker \n `React / Next.JS`];
-    HomeBroker[HomeBroker] <-->|Rest| NestJs[Nest.js \n backend];
-    NestJs[Nest.js \n backend] -->|SSE - Tempo Real| HomeBroker[Home Broker \n `React / Next.JS`] ;
-    NestJs[Nest.js \n backend] --> Kafka[/Apache Kafka/];
-    Kafka[/Apache Kafka/] ---> NestJs[Nest.js \n backend];
+    HomeBroker[Home Broker \n `React / Next.JS`] <-->|Rest| NestJs[Backend \n Nest.js];
+    NestJs[Backend \n Nest.js] -->|SSE - Tempo Real| HomeBroker[Home Broker \n `React / Next.JS`] ;
+    NestJs[Backend \n Nest.js] --> Kafka[/Apache Kafka/];
+    NestJs[Backend \n Nest.js]  <-->|Rest| Mobile[Mobile\n Flutter];
+    Mobile[Mobile\n Flutter] -->|SSE - Tempo Real| NestJs[Backend \n Nest.js] ;
+    Kafka[/Apache Kafka/] ---> NestJs[Backend \n Nest.js];
     SistemaBolsa[Sistema Bolsa \n Golang] ---> Kafka[/Apache Kafka/];
     Kafka[/Apache Kafka/] ---> SistemaBolsa[Sistema Bolsa \n Golang];
+
 ```
 
+## Tecnologias utilizadas
+
+- Linguagem Go
+- ReactJs/NextJs
+- Apache Kafka
+- NestJs
+- Docker
+- Flutter (Mobile)
