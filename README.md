@@ -12,13 +12,13 @@
 
 ```mermaid
 flowchar LR
-    User[Frontend] --> HomeBroker[Frontend];
-    HomeBroker[Frontend] --> NestJs[Backend];
-    NestJs[Backend] --> Kafka[Message Broker];
-    Kafka[Message Broker] ---> NestJs[Backend];
-    NestJs[Backend] ---> SistemaBolsa[Golang];
-    SistemaBolsa[Golang] ---> Kafka[Message Broker];
-    Kafka[Message Broker] ---> SistemaBolsa[Golang];
+    User--> HomeBroker;
+    HomeBroker --> NestJs;
+    NestJs --> Kafka;
+    Kafka ---> NestJs;
+    NestJs ---> SistemaBolsa;
+    SistemaBolsa ---> Kafka;
+    Kafka ---> SistemaBolsa;
 ```
 
 
