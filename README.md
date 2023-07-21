@@ -1,7 +1,5 @@
 # Projeto de Homebroker
 
-
-
 ## Descrição do Projeto
 
 <p align="justify">O projeto consiste em um sistema de homebroker, onde o usuário pode comprar e vender ações, além de acompanhar o valor de cada ação em tempo real.</p>
@@ -11,12 +9,15 @@
 ### BIG PICTURE
 
 ```mermaid
+%%{init: { "fontFamily": "Trebuchet MS, Verdana, Arial, Sans-Serif", "logLevel": 2 } }%%
+
 graph LR;
-    User[Frontend] --> HomeBroker[Frontend];
-    HomeBroker[Frontend] -->|Rest| NestJs[Backend];
-    NestJs[Backend] --> Kafka[Message Broker];
-    Kafka[Message Broker] ---> NestJs[Backend];
-    NestJs[Backend] ---> SistemaBolsa[Golang];
-    SistemaBolsa[Golang] ---> Kafka[Message Broker];
-    Kafka[Message Broker] ---> SistemaBolsa[Golang];
+    User(User) <--> HomeBroker[Home Broker \n `React / Next.JS`];
+    HomeBroker[HomeBroker] <-->|Rest| NestJs[Nest.js \n backend];
+    NestJs[Nest.js \n backend] -->|SSE - Tempo Real| HomeBroker[Home Broker \n `React / Next.JS`] ;
+    NestJs[Nest.js \n backend] --> Kafka[/Apache Kafka/];
+    Kafka[/Apache Kafka/] ---> NestJs[Nest.js \n backend];
+    SistemaBolsa[Sistema Bolsa \n Golang] ---> Kafka[/Apache Kafka/];
+    Kafka[/Apache Kafka/] ---> SistemaBolsa[Sistema Bolsa \n Golang];
 ```
+
