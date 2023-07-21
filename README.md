@@ -11,7 +11,7 @@
 ### BIG PICTURE
 
 ```mermaid
-flowchar LR
+flowchar LR;
     User--> HomeBroker;
     HomeBroker --> NestJs;
     NestJs --> Kafka;
