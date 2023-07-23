@@ -93,3 +93,5 @@ graph LR;
     - [x] Wallet Assets (Ativos da Carteira)
     - [x] Orders (Ordens de Compra e Venda)
 - [x] Criar integração com o microserviço Golang (Matches) utilizando Apache Kafka
+
+# Projeto Flutter
