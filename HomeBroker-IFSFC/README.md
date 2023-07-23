@@ -18,7 +18,7 @@ graph LR;
     NestJs[Backend \n Nest.js] --> Kafka[/Apache Kafka/];
     NestJs[Backend \n Nest.js]  <-->|Rest| Mobile[Mobile\n Flutter];
     Mobile[Mobile\n Flutter] -->|SSE - Tempo Real| NestJs[Backend \n Nest.js] ;
-    Kafka[/Apache Kafka/] ---> NestJs[Backend \n Nest.js];
+    Kafka[/Apache Kafka/] ---> NestJs[Backend \n Nest.js]; 
     SistemaBolsa[Sistema Bolsa \n Golang] ---> Kafka[/Apache Kafka/];
     Kafka[/Apache Kafka/] ---> SistemaBolsa[Sistema Bolsa \n Golang];
 
